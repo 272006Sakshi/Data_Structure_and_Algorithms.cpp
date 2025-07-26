@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
+        // TC: O(LogN)
         if(x<0) return false; //From left to right, -121. From right to left, it becomes 121-. it is not a palindrome.
         long reverse =0;
         long long temp =x;
