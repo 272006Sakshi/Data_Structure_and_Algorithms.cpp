@@ -19,16 +19,17 @@ public:
                 q.pop();
 
                 int index = leftToRight ? i : (n - 1 - i);
-                level[index] = node->val;
+                lev[index] = node->val;
 
                 if (node->left) q.push(node->left);
                 if (node->right) q.push(node->right);
             }
 
-            res.push_back(level);
+            res.push_back(lev);
             leftToRight = !leftToRight; 
         }
 
         return res;
     }
 };
+
