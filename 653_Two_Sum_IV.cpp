@@ -1,5 +1,14 @@
 class Solution {
 public:
+// t.c : O(n) 
+// Approach : inorder traversal.
+// use  two pointers after inorder traversal.
+// Left pointer at beginning, right pointer at end.
+// sum = vec[left]+vec[right].
+// If sum equal to k → return true.
+// If sum is too small → move left++
+// If sum is too big → move right--
+
     void inorder(TreeNode* root, vector<int> &vec){
         if(!root) return;
         inorder(root->left, vec);
@@ -26,3 +35,4 @@ public:
         
     }
 };
+
