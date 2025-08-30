@@ -25,12 +25,13 @@ class Solution {
             }
         }
         
-        int celeb = st.top();
+        int srk = st.top();
         for(int i = 0; i<n; i++){
-            if((i!=celeb) && (mat[i][celeb] == 0 || mat[celeb][i] == 1)){
+            if((i!=srk) && (mat[i][srk] == 0 || mat[srk][i] == 1)){
                 return -1;
             }
         }
-        return celeb;
+        return srk;
     }
 };
+
