@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int maxProduct(vector<int>& nums) {
+// T.C: O(n)
+// S.C: O(1)
+        int n = nums.size();
+        
+        int Maxprod = nums[0];
+        int Minprod = nums[0];
+        int res = nums[0];
+
+        for(int i = 1; i<n; i++){
+            int X = nums[i];
+
+            int maxi = max({X, Maxprod*X, Minprod*X});
+            int mini = min({X, Maxprod*X, Minprod*X});
+
+            Maxprod = maxi;
+            Minprod = mini;
+
+            res = max(Maxprod, res);
+        }
+        return res;
+    }
+};
