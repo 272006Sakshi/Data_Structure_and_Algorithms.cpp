@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int findFinalValue(vector<int>& nums, int original) {
+        // T.C: O(n log n)
+        // S.C: O(1)
+        // int n = nums.size();
+        // sort(nums.begin(), nums.end());
+        // for(int i = 0; i<n; i++){
+        //     if(nums[i] == original){
+        //         original = 2 * original;
+
+        //     }
+           
+        // }
+        // return original;
+
+        // Optimal Approach
+        // T.C: O(n)
+        // S.C: O(n)
+        unordered_set<int> st(nums.begin(), nums.end());
+        while(st.count(original)){
+            original = 2 * original;
+        }
+        return original;
+
+        
+    }
+};
