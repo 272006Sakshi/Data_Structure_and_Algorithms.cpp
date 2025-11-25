@@ -17,10 +17,11 @@ public:
         //     else 
         //         res.push_back(false);
         // }
-        int curr = 0;
-        for (int b : nums) {
-           curr = (curr * 2 + b) % 5;
-           if(curr == 0) res.push_back(true);
+
+        int num = 0;
+        for (int i = 0; i<nums.size(); i++) {
+           num = (num * 2 + nums[i]) % 5;
+           if(num == 0) res.push_back(true);
            else{
               res.push_back(false);
            }
