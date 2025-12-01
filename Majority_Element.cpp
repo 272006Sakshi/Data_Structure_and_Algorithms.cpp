@@ -2,23 +2,33 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) {
         int n = nums.size();
-        // sort(nums.begin(), nums.end());
-        // return nums[n/2];
-        int cnt = 1;
-        int maj = nums[0];
+        // T.C: O(n)   S.C: O(n)
+        // int res;
+        // unordered_map<int, int> mp;
+        // for(int i = 0; i<n; i++){
+        //     mp[nums[i]]++;
+        // }
+        // for(auto &it:mp){
+        //     if(it.second>n/2) return res = it.first;
+        // }
+        // return res;
+       
 
-        for(int i = 1; i<n; i++){
+       // Boyer Moore Voting Algorithm
+       // T.C: O(n)   S.C: O(1)
+        int  = 0, cnt = 0;
+        for(int i = 0; i<n; i++){
             if(cnt == 0){
-                maj = nums[i];
-                cnt++;
+                candidate = nums[i];
             }
-            else if(nums[i] == maj){
-                cnt++;
+
+            if(candidate == nums[i]){
+                cnt+=1;
             }
             else{
-                cnt--;
+                cnt-=1;
             }
         }
-        return maj;
+        return candidate;
     }
 };
