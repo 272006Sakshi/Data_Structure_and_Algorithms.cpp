@@ -1,0 +1,26 @@
+class Solution {
+public:
+bool ispalindrom(string &t, int l, int r){
+       while(l<r){
+        if(t[l] != t[r]) return false;
+        r--;
+        l++;
+       }
+       return true;
+}    
+string longestPalindrome(string s) {
+    int maxi = INT_MIN;
+    int stInd = 0;
+    for(int i = 0; i<s.length(); i++){
+        for(int j =0; j<s.length(); j++){
+            if(ispalindrom(s, i, j)==true){
+                if(j-i+1>maxi){
+                    maxi = j-i+1;
+                    stInd = i;
+                }
+            }
+        }
+    }
+    return s.substr(stInd, maxi);
+}
+};
