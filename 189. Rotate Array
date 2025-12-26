@@ -1,0 +1,12 @@
+public:
+    void rotate(vector<int>& nums, int k) {
+        //step 1:  [1,2,3,4,5,6,7] --> reverse array-> [7, 6, 5, 4, ,3, 2, 1]
+        //step 2: [7, 6, 5, 4, ,3, 2, 1] --> reverse 0 to kth element(not index) [5, 6, 7, 4, ,3, 2, 1]
+        //step 3: [5, 6, 7, 4, ,3, 2, 1] --> reverse k+1 to n -> [5, 6, 7, 1, 2, 3, 4,]
+        int n = nums.size();
+        k = k%n;
+        reverse(nums.begin(), nums.end());
+        reverse(nums.begin(), nums.begin()+k);
+        reverse(nums.begin()+k, nums.end());
+    }
+};
