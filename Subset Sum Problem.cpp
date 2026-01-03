@@ -1,3 +1,4 @@
+// Platform: GFG
 // 0/1 knapsack problem pattern--> tabulation 
 class Solution {
   public:
