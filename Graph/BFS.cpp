@@ -1,3 +1,5 @@
+// T.C: O(V+E)
+// S.C: O(V) -> queue to keep track of the vertices
 vector<int> bfs(vector<vector<int>> &adj){
   int V = adj.size();
   vector<bool> visited(V, false);
