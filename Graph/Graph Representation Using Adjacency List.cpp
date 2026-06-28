@@ -16,13 +16,9 @@ public:
 
     void print()
     {
-        // Iterate over each vertex
         for (auto i : adj) {
-            // Print the vertex
             cout << i.first << " -> ";
-            // Iterate over the connected vertices
             for (auto j : i.second) {
-                // Print the connected vertex
                 cout << j << " ";
             }
             cout << endl;
