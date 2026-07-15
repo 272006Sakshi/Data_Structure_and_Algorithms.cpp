@@ -1,4 +1,6 @@
-// DFS
+class Solution {
+public:
+    // DFS
     bool DFScycle(unordered_map<int, vector<int>> &adj, int u, vector<bool> &visited, vector<bool> &recursion){
         visited[u]=true;
         recursion[u]=true;
@@ -14,6 +16,7 @@
         return false;
     }             
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+       
         unordered_map<int, vector<int>> adj;
         vector<bool> visited(numCourses, false);
         vector<bool> recursion(numCourses, false);
