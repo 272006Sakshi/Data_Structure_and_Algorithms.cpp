@@ -30,9 +30,9 @@ public:
         return find(parent[x]);
     }
 
-    // Unite (merge) the set that includes element 
+    // union (merge) the set that includes element 
     // i and the set that includes element j
-    void unite(int x, int y) {
+    void  Union(int x, int y) {
       
         // Representative of set containing i
         int irep = find(i);
