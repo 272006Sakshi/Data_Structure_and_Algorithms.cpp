@@ -2,6 +2,8 @@ class Solution {
   public:
     vector<int> dijkstra(int V, vector<vector<int>> &edges, int src) {
         // Code here
+
+      // T.C: Vlog(V)+ V.Elog(V) --> Vlog(V)(1+E)
         vector<vector<pair<int, int>>> adj(V); // adj[node] = {{neighbour, weight}, ...}
         for (auto &edge : edges) {
             int u = edge[0];
@@ -20,19 +22,19 @@ class Solution {
         pq.push({0, src});
         
         // Step 4: Dijkstra's algorithm
-        while (!pq.empty()) {
+        while (!pq.empty()) {  // O(V)
             int d = pq.top().first;
             int node = pq.top().second;
-            pq.pop();
+            pq.pop();  // log(V)
             
-            for (auto &it : adj[node]) {
+            for (auto &it : adj[node]) {  // O(E)
                 int adjNode = it.first;
                 int weight = it.second;
                 
                 // If a shorter path is found
                 if (d + weight < dist[adjNode]) {
                     dist[adjNode] = d + weight;
-                    pq.push({dist[adjNode], adjNode});
+                    pq.push({dist[adjNode], adjNode});  //log(V)
                 }
             }
         }
