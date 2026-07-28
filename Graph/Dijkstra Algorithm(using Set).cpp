@@ -1,6 +1,6 @@
 class Solution {
   public:
-// T.C: Vlog(V)+ V.Elog(v) --> Vlog(V)(1+E)
+
     vector<int> dijkstra(int V, vector<vector<int>> &edges, int src) {
         // Code here
         vector<vector<pair<int, int>>> adj(V); // adj[node] = {{neighbour, weight}, ...}
